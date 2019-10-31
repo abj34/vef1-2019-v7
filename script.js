@@ -143,9 +143,8 @@ function parseGuess(input){
  */
 function getResponse(guess, correct){
 
-  const a = guess - correct;
-  const howFarAway = Math.abs(a);
-
+  const howFarAway = Math.abs(guess - correct);
+  
   if (howFarAway === 0) {
     return 'Rétt!'
   } else if (howFarAway < 5) {
