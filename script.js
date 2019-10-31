@@ -49,14 +49,16 @@ function start() {
 function play() {
   const random = randomNumber(1,100);
   let leikur;
-  let guessesMade = 0;
+  let guessesMade = 0;  
 
   let input = prompt("Giskaðu á tölu milli 0 og 100.");
 
   if(input === null) {
     return 0;
   }
- 
+
+  guessesMade++;
+  
   while(leikur !== 'Rétt!') {
     
     const guess = parseGuess(input);
