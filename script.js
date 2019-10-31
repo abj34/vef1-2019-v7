@@ -58,12 +58,12 @@ function play() {
   }
 
   guessesMade++;
-  
+
   while(leikur !== 'Rétt!') {
     
     const guess = parseGuess(input);
 
-    const leikur = getResponse(random, guess);
+    const leikur = getResponse(guess, random);
 
     if(leikur === 'Rétt!') {
       alert(`${leikur} Vel gert!`);
@@ -147,7 +147,9 @@ function getResponse(guess, correct){
 
   const howFarAway = Math.abs(guess - correct);
   
-  if (howFarAway === 0) {
+  if (guess > 100) {
+    return 'Ekki rétt!'
+  }else if (howFarAway === 0) {
     return 'Rétt!'
   } else if (howFarAway < 5) {
     return 'Mjög nálægt!'
